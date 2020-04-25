@@ -12,7 +12,9 @@ versions of some of the programs he iterates on.
 ## Video 1
 
 There are no commands for [video 1](https://www.youtube.com/watch?v=yl8vPW5hydQ).
-All the software is resistors.
+All the software is hardwired resistors.
+
+"My favorite programming language is solder." - [Todd Whitehurst](https://www.google.com/books/edition/The_Art_and_Science_of_Analog_Circuit_De/SPwqg7qpFWUC?hl=en&gbpv=1&dq=bob%20pease%20richard%20feynman&pg=PA41&printsec=frontcover) (or Bob Pease?)
 
 
 ## Video 2
