@@ -28,6 +28,9 @@ reset:
   lda #%00000110 ; Increment and shift cursor; don't shift display
   jsr lcd_instruction
 
+  lda #%00000001 ; Clear Display
+  jsr lcd_instruction 
+
   lda #"H"
   jsr print_char
   lda #"e"
