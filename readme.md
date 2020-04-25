@@ -1,5 +1,8 @@
 # Build a 6502 computer
 
+![My 6502](6502s.jpg)
+
+
 Files for my build of Ben Eater's excellent 6502 breadboard computer. More
 from him at https://eater.net/6502.
 
