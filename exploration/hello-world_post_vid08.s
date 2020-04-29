@@ -16,7 +16,7 @@ reset:
   ldx #$ff  ; a2 ff
   txs       ; 9a
 
-  ; turn of data latching on Port A
+  ; turn of data latching on Port A so that we can read current state of input
   ; http://lateblt.tripod.com/bit67.txt
   lda #%00000000 ; a9 00 Setting last two bits (2 and 1) to 0 turns off latching for PA and PB input
   sta ACR        ; 8d 0b 60
@@ -72,20 +72,22 @@ loop:
 
 check_busy:
 
-  pha            ; Push the current value of A to the stack
+  pha            ; Push the current value of A to the stack, need it later since it has info for display
+
+
   lda #%00000000 ; a9 00       Set all pins on port B to input
   sta DDRB       ; 8d 02 60
 
-  lda #RW        ; a9 40
+  lda #RW        ; a9 40       Set the RW flag. Do this before enable, since if they are put high at the same time the display can read the enable before it sees the read
   sta PORTA      ; 8d 01 60
 
-  lda #(RW | E)  ; a9 c0
+  lda #(RW | E)  ; a9 c0       Now raise the E flag to enable output of busy flag
   sta PORTA      ; 8d 01 60
 
 while_busy:
-  lda PORTB      ; ad 00 60       Read the busy flag
+  lda PORTB      ; ad 00 60    Read the busy flag
   eor #%00000000 ; 49 00       Check if it is zero
-  and #BF        ; 29 80       Select only the relevent bit
+  and #BF        ; 29 80       Select only the relevant bit
   bne while_busy ; d0          If result isn't zero, try again
 
   lda #0         ; a9 00       Clear RS/RW/E bits
