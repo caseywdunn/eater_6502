@@ -72,10 +72,14 @@ loop:
 
 check_busy:
 
+  pha            ; Push the current value of A to the stack
   lda #%00000000 ; a9 00       Set all pins on port B to input
   sta DDRB       ; 8d 02 60
 
-  lda #RW        ; a9 40       Set just R bit to read busy flag
+  lda #RW        ; a9 40
+  sta PORTA      ; 8d 01 60
+
+  lda #(RW | E)  ; a9 c0
   sta PORTA      ; 8d 01 60
 
 while_busy:
@@ -84,13 +88,14 @@ while_busy:
   and #BF        ; 29 80       Select only the relevent bit
   bne while_busy ; d0          If result isn't zero, try again
 
-  lda #0         ; Clear RS/RW/E bits
-  sta PORTA
+  lda #0         ; a9 00       Clear RS/RW/E bits
+  sta PORTA      ; 8d 01 60
 
-  lda #%11111111 ; Set all pins on port B to output
-  sta DDRB
+  lda #%11111111 ; a9 ff       Set all pins on port B to output
+  sta DDRB       ; 8d 02 60
 
-  rts
+  pla            ; Retrieve A from the stack
+  rts            ; 60
 
 
 lcd_instruction:
