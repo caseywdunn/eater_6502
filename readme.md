@@ -35,6 +35,47 @@ With reference to https://www.reddit.com/r/beneater/comments/doytpo/6502_project
 | 6522 | `$6010` - `7fff` | Mirrors of the sixteen VIA registers |
 | 6522 | `$8000` - `$ffff` | ROM |
 
+
+## Writing assembly
+
+The machine code is put on the ROM starting at $0 (relative to the actual ROM address)
+
+The `.org` directive tells the assembler where the CPU thinks the address will be.
+
+- Starting the assembly code with `.org $8000` tells the assemlber that the CPU address space for the ROM starts at `$8000`
+
+- Subsequent `.org` directives will place data into the ROM at the specified address (in CPU address space)
+
+Here is an annotated version of blink.s:
+
+      .org $8000    ; Though written to the first address in the ROM, $0,
+                    ; this code will appear to the CPU to be at $8000
+
+    reset:          ; This label marks the first position in the ROM for
+                    ; the CPU is $8000
+      lda #$ff
+      sta $6002
+
+      lda #$50
+      sta $6000
+
+    loop:
+      ror
+      sta $6000
+
+      jmp loop
+
+      .org $fffc   ; Specify that the following code will go at the position
+                   ; that appears to the CPU to be at $fffc. $fffc is the
+                   ; location of the reset vector. The value at this vector
+                   ; is loaded into the program counter after a CPU reset.
+
+      .word reset  ; Place the value of the label reset, ie $8000, at this
+                   ; position
+
+      .word $0000  ; Pad out the last couple bytes
+
+
 ## Code for videos
 
 I've slightly modified some of the commands and code to have incremental
