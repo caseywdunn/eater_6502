@@ -6,10 +6,20 @@
 Files for my build of Ben Eater's excellent 6502 breadboard computer. More
 from him at https://eater.net/6502.
 
+## Memory map
+
+| Chip | Range | Description |
+| --- | --- | --- |
+| RAM | `$0000` - `$00FF` | Zero page |
+| RAM | `$0100` - `$01FF` | Stack |
+
+
+## Code for videos
+
 I've slightly modified some of the commands and code to have incremental
 versions of some of the programs he iterates on.
 
-## Video 1
+### Video 1
 
 There are no commands for [video 1](https://www.youtube.com/watch?v=yl8vPW5hydQ).
 All the software is hardwired resistors.
@@ -17,7 +27,7 @@ All the software is hardwired resistors.
 "My favorite programming language is solder." - [Todd Whitehurst](https://www.google.com/books/edition/The_Art_and_Science_of_Analog_Circuit_De/SPwqg7qpFWUC?hl=en&gbpv=1&dq=bob%20pease%20richard%20feynman&pg=PA41&printsec=frontcover) (or Bob Pease?)
 
 
-## Video 2
+### Video 2
 
 Commands for [video 2](https://www.youtube.com/watch?v=yl8vPW5hydQ).
 
@@ -33,7 +43,7 @@ Now the full binary.
     hexdump -C rom.bin
     minipro -p AT28C256 -w rom.bin
 
-## Video 3
+### Video 3
 
 Commands for [video 3](https://www.youtube.com/watch?v=oO8_2JJV0B4).
 
@@ -41,7 +51,7 @@ Commands for [video 3](https://www.youtube.com/watch?v=oO8_2JJV0B4).
     hexdump -C a.out
     minipro -p AT28C256 -w a.out
 
-## Video 4
+### Video 4
 
 Commands for [video 4](https://www.youtube.com/watch?v=oO8_2JJV0B4).
 
@@ -50,7 +60,7 @@ Commands for [video 4](https://www.youtube.com/watch?v=oO8_2JJV0B4).
     minipro -p AT28C256 -w a.out
 
 
-## Video 5
+### Video 5
 
 Commands for [video 5](https://www.youtube.com/watch?v=xBjQVxVxOxc).
 
@@ -60,7 +70,7 @@ Commands for [video 5](https://www.youtube.com/watch?v=xBjQVxVxOxc).
     minipro -p AT28C256 -w a.out
 
 
-## Video 7
+### Video 7
 
 Commands for [video 7](https://www.youtube.com/watch?v=omI0MrTWiMU).
 
