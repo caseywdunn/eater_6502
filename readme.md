@@ -33,7 +33,7 @@ With reference to https://www.reddit.com/r/beneater/comments/doytpo/6502_project
 | 6522 | `$600e` | Interrupt Enable Register |
 | 6522 | `$600f` | I/O Register A sans Handshake |
 | 6522 | `$6010` - `7fff` | Mirrors of the sixteen VIA registers |
-| 6522 | `$8000` - `$ffff` | ROM |
+| 28C256 | `$8000` - `$ffff` | ROM |
 
 
 ## Writing assembly
