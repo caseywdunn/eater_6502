@@ -67,3 +67,27 @@ Commands for [video 7](https://www.youtube.com/watch?v=omI0MrTWiMU).
     vasm6502_oldstyle -Fbin -dotdir hello-world_vid07.s
     hexdump -C a.out
     minipro -p AT28C256 -w a.out
+
+## Video 8
+
+[Why build an entire computer on breadboards?](https://youtu.be/fCbAafKLqC8)
+
+No new code.
+
+## Video 9
+
+[How assembly language loops work](https://youtu.be/ZYJIakkcLYw)
+
+`hello-world_vid09.s`
+
+## Video 10
+
+[Binary to decimal can’t be that hard, right?](https://youtu.be/v3-a-zqKfgA)
+
+## Video 11
+
+[Hardware interrupts](https://youtu.be/DlEa8kd7n3Q)
+
+## Video 12
+
+[Interrupt handling](https://youtu.be/oOYA-jsWTmc)
