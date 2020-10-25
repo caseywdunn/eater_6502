@@ -171,9 +171,9 @@ No new code.
 
 [Binary to decimal can’t be that hard, right?](https://youtu.be/v3-a-zqKfgA)
 
-At about 1:31 in the video, he shows a file I here call `hello-world_vid10_42.s`.
+At about 1:31 in the video, he shows a file I here call `vid10_42.s`.
 
-Then at 19:10 in the video, he starts making edits for what I call `hello-world_vid10.s`. In the video, it is called `bin2dec.s`.
+Then at 19:10 in the video, he starts making edits for what I call `vid10_bin2dec.s`. In the video, it is called `bin2dec.s`.
 
 
 ## Video 11
