@@ -76,19 +76,24 @@ Here is an annotated version of blink.s:
       .word $0000  ; Pad out the last couple bytes
 
 
-## Docker
+## Software
 
-Building the container:
+There are a couple tools needed to build the binaries and get them on the ROM. Here is how to install them on linux.
 
-    cd Docker
-    docker build -t minipro .
+To install vasm:
+    wget http://sun.hasenbraten.de/vasm/release/vasm.tar.gz
+    tar xvzf vasm.tar.gz
+    cd vasm
+    make CPU=6502 SYNTAX=oldstyle
+    cp vasm6502_oldstyle /usr/bin
+    cp vobjdump /usr/bin
 
-Using the container with the programmer requires that we allow USB port access. That is tricky in some scenarios.
 
-
-    
-    docker run --device [path to usb device] -it minipro /bin/bash
-
+To install minipro:
+    git clone https://gitlab.com/DavidGriffith/minipro.git
+    cd minipro
+    make
+    make install
 
 
 ## Code for videos
