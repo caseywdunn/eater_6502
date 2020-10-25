@@ -76,6 +76,21 @@ Here is an annotated version of blink.s:
       .word $0000  ; Pad out the last couple bytes
 
 
+## Docker
+
+Building the container:
+
+    cd Docker
+    docker build -t minipro .
+
+Using the container with the programmer requires that we allow USB port access. That is tricky in some scenarios.
+
+
+    
+    docker run --device [path to usb device] -it minipro /bin/bash
+
+
+
 ## Code for videos
 
 I've slightly modified some of the commands and code to have incremental
@@ -163,3 +178,8 @@ No new code.
 ## Video 12
 
 [Interrupt handling](https://youtu.be/oOYA-jsWTmc)
+
+
+### Similar repositories
+
+<https://github.com/lukeshiner/6502_computer>

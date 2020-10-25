@@ -27,10 +27,10 @@ reset:
   lda #$00000001 ; Clear display
   jsr lcd_instruction
 
-lda #"4"
-jsr print_char
-lda #"2"
-jsr print_char
+  lda #"4"
+  jsr print_char
+  lda #"2"
+  jsr print_char
 
 loop:
   jmp loop
