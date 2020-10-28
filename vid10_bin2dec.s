@@ -35,7 +35,7 @@ reset:
   lda #0
   sta message
 
-  ; Initialize vale to be the number to convert
+  ; Initialize value to be the number to convert
   lda number
   sta value
   lda number + 1

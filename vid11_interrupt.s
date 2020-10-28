@@ -17,6 +17,7 @@ RS = %00100000
 reset:
   ldx #$ff
   txs
+  cli
 
   lda #%11111111 ; Set all pins on port B to output
   sta DDRB
@@ -43,7 +44,7 @@ loop:
   lda #0
   sta message
 
-  ; Initialize vale to be the number to convert
+  ; Initialize value to be the number to convert
   lda counter
   sta value
   lda counter + 1
