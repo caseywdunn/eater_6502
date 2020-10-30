@@ -185,6 +185,9 @@ Then at 19:10 in the video, he starts making edits for what I call `vid10_bin2de
 
 [Hardware interrupts](https://youtu.be/DlEa8kd7n3Q)
 
+The file he writes in this video is referred to here as `vid11_interrupts.s`.
+
+
 ## Video 12
 
 [Interrupt handling](https://youtu.be/oOYA-jsWTmc)
