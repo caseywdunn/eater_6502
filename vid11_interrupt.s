@@ -45,11 +45,13 @@ loop:
   sta message
 
   ; Initialize value to be the number to convert
+  sei
   lda counter
   sta value
   lda counter + 1
   sta value + 1
-
+  cli
+  
 divide:
   ; Initialize the remainder to zero
   lda #0
@@ -167,8 +169,6 @@ print_char:
   rts
 
 nmi:
-  rti
-
 irq:
   inc counter
   bne exit_irq
