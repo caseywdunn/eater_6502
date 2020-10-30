@@ -2,6 +2,9 @@ PORTB = $6000
 PORTA = $6001
 DDRB = $6002
 DDRA = $6003
+PCR = $600c
+IFR = $600d
+IER = $600e
 
 value = $0200 ; 2 bytes
 mod10 = $0202 ; 2 bytes
@@ -18,6 +21,11 @@ reset:
   ldx #$ff
   txs
   cli
+
+  lda $82
+  sta IER
+  lda $00
+  sta PCR
 
   lda #%11111111 ; Set all pins on port B to output
   sta DDRB
@@ -174,6 +182,7 @@ irq:
   bne exit_irq
   inc counter + 1
 exit_irq:  
+  bit PORTA  ; clears interrupt
   rti
 
   .org $fffa
