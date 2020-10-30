@@ -178,11 +178,33 @@ print_char:
 
 nmi:
 irq:
+  pha
+  txa
+  pha
+  tya
+  pha
+
   inc counter
   bne exit_irq
   inc counter + 1
 exit_irq:  
+
+  
+  ldx #$ff  ; delay
+  ldy #$ff
+delay:
+  dex
+  bne delay
+  dey
+  bne delay
+
   bit PORTA  ; clears interrupt
+
+  pla
+  tay
+  pla
+  tax
+  pla
   rti
 
   .org $fffa

@@ -192,6 +192,8 @@ The file he writes in this video is referred to here as `vid11_interrupts.s`.
 
 [Interrupt handling](https://youtu.be/oOYA-jsWTmc)
 
+Code is in `vid12_interrupts.s`.
+
 
 ### Similar repositories
 
